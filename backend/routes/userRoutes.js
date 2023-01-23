@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const User = require('../models/User');
 
-// creating user
 router.post('/', async(req, res)=> {
   try {
     const {name, email, password} = req.body;
@@ -20,7 +19,6 @@ router.post('/', async(req, res)=> {
   }
 })
 
-// login user
 
 router.post('/login', async(req, res)=> {
   try {

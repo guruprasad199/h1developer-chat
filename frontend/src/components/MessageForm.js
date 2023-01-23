@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { AppContext } from "../context/appContext";
 import "./MessageForm.css";
-function MessageForm() {
+
+const MessageForm = () => {
   const [message, setMessage] = useState("");
   const user = useSelector((state) => state.user);
   const { socket, currentRoom, setMessages, messages, privateMemberMsg } =
@@ -25,9 +26,6 @@ function MessageForm() {
     return month + "/" + day + "/" + year;
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
 
   function scrollToBottom() {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -76,7 +74,7 @@ function MessageForm() {
                 ({ content, time, from: sender }, msgIdx) => (
                   <div
                     className={
-                      sender?.email == user?.email
+                      sender?.email === user?.email
                         ? "incoming-message"
                         : "message"
                     }
@@ -88,7 +86,7 @@ function MessageForm() {
                       <p className="message-content">{content}</p>
                       <div style={{display:'flex', alignItems:'center'}}>
                         <p style={{marginRight:'5px'}} >
-                          {sender._id == user?._id ? "You" : sender.name}
+                          {sender._id === user?._id ? "You" : sender.name}
                         </p>
                         <p>{time}</p>
                       </div>

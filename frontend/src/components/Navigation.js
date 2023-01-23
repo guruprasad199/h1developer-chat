@@ -4,7 +4,8 @@ import { useLogoutUserMutation } from "../services/appApi";
 import { useSelector } from "react-redux";
 import { LinkContainer } from "react-router-bootstrap";
 import logo from "../assets/logo.png";
-function Navigation() {
+
+const Navigation = () => {
     const user = useSelector((state) => state.user);
     const [logoutUser] = useLogoutUserMutation();
     async function handleLogout(e) {
@@ -17,7 +18,7 @@ function Navigation() {
             <Container>
                 <LinkContainer to="/">
                     <Navbar>
-                        <img src={logo} style={{ width: 50, height: 50 }} />
+                        <img src={logo} alt="logo" style={{ width: 50, height: 50 }} />
                     </Navbar>
                 </LinkContainer>                
                     <Nav className="ms-auto">
