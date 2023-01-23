@@ -2,3 +2,12 @@
     margin-left: 10px;
     display: inline-block;
 }
+
+
+.wrapMain {
+    padding: 40px;
+}
+
+.textColor {
+    color: red;
+}

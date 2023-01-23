@@ -86,6 +86,11 @@ io.on('connection', (socket)=> {
 
 })
 
+app.get("/", (req, res) => {
+  res.send("404 URL NOT FOUND");
+});
+
+
 server.listen(PORT, ()=> {
   console.log('listening to port', PORT)
 })
